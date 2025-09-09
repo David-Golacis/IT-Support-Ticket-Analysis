@@ -26,6 +26,7 @@ The Customer IT Support dataset consists of one table with 28,587 records. Shown
 | Queue    | Specifies the department to which the email ticket is routed                  | String    |
 | Priority | Indicates the urgency and importance of the issue                             | String    |
 | Language | Indicates the language in which the email is written                          | String    |
+| Version  | Designates the version of the application used                                | Number    |
 | Subject  | Subject of the customer's email                                               | String    |
 | Body     | Body of the customer's email                                                  | String    |
 | Answer   | The response provided by the helpdesk agent                                   | String    |
@@ -34,7 +35,8 @@ The Customer IT Support dataset consists of one table with 28,587 records. Shown
 
 For this analysis, the following amendments were made:
 - The language column was filtered for English-only responses
-- The linebreak code, \n\n, was removed from the queries' bodies and answers
+- From the queries' bodies and answers, the linebreak code, \n\n, was removed
+- A custom table aggregating the 
 
 This helped clarify the information, ensuring that all data points were clear and readable. This reduced the number of records to 16,338, a reduction of 42.85%.
 
