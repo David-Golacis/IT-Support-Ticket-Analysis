@@ -51,6 +51,10 @@ Below is the overview page from the Power BI dashboard, and more examples are in
 
 ## Insights Deep Dive
 
+### Priority Breakdown
+
+The Technical Support department accounted for 43.51% of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% and 14.17% respectively. Of these high-priority issues, the Technical Support team actioned 1,444 responses to the Incident type, making up around 52.30% of their most critical workload. This is in contrast to other departments, which have a more balanced workload across the four types of incidents.
+
 
 
 
