@@ -75,11 +75,11 @@ Digging deeper into the middle of the table figures, the Customer Service team s
 
 ### Tags per Department
 
-Sifting through the assigned categories reveals that the three most common tags used across all tickets were Tech Support (9,597; 12.50%), IT (9,320; 12.14%), and Performance (7,536; 9.82%).
+Sifting through the assigned categories reveals that the three most common tags used across all tickets were Tech Support (9,597; 12.50%), IT (9,320; 12.14%), and Performance (7,536; 9.82%). This reveals that the end-users are experiencing a significant number of issues with the application's performance.
 
 ![Total Tags](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Total%20Tags.png)
 
-This reveals that the end-users are experiencing a significant number of issues with the application's performance. The Technical Support, Product Support, Customer Service, and IT Support departments primarily address these concerns.
+Grouping these tags by department reveals that the Technical Support, Product Support, Customer Service, and IT Support departments primarily address these concerns.
 
 ![Tags per Department](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20per%20Department.png)
 
