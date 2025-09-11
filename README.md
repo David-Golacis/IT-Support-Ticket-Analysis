@@ -51,11 +51,37 @@ Below is the overview page from the Power BI dashboard, and more examples are in
 
 ## Insights Deep Dive
 
+The second page of the dashboard shows a workload breakdown by department for priorities, incident types, and assigned tags. This page would be helpful for an IT manager to review the allocation of tasks for their various teams, ensuring each team has a balanced workload to avoid one particular team being burdened with too many urgent, critical problems all at once.
+
+![Workload](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Workload.png)
+
+The third page of the dashboard shows further supporting information relating to the assigned tags. Here, the IT manager can view the total number of a specific tag used, the number of live application versions in use, the correspondence between incident types and priorities, and example responses from their staff. 
+
+![Tags & Themes](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20%26%20Themes.png)
+
+
 ### Priority Breakdown
 
-The Technical Support department accounted for 43.51% of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% and 14.17% respectively. Of these high-priority issues, the Technical Support team actioned 1,444 responses to the Incident type, making up around 52.30% of their most critical workload. This is in contrast to other departments, which have a more balanced workload across the four types of incidents.
+The Technical Support department accounted for 43.51% (2,761) of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% (938) and 14.17% (899), respectively. Of these high-priority issues, the Technical Support team actioned 1,444 responses of the Incident type, making up around 52.30% of their most critical workload. This is in contrast to other departments, which have a more balanced workload across the four types of incidents.
+
+The IT Support team actioned the second greatest number of high-priority requests, contributing to 30.52% of their workload. These tasks were evenly split amongst the four incident types, showing a balanced distribution of problems relating to their role.
+
+Although the Product Support department handles the third-highest number of high-priority tickets, it acts on the most medium-priority requests, totalling 1,575 tickets. These medium requests equate to 51.25% of their tasks. In contrast, the Technical Support team handles 1,442 medium tickets, resulting in 30.44% of their workload being of 2nd order priority.
+
+Digging deeper into the middle of the table figures, the Customer Service team shows that they responded to 1,121 medium tickets, equalling 46.51% of their workload, giving them the third longest queue of items to action of this priority. This is in addition to the Customer Service department actioning the largest number of low-priority tickets at 837, accounting for 34.73% of their responses.
+
+![Priorities and Incident Types](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Priorities%20and%20Incident%20Types.png)
 
 
+### Tags per Department
+
+Sifting through the assigned categories reveals that the three most common tags used across all tickets were Tech Support (9,597; 12.50%), IT (9,320; 12.14%), and Performance (7,536; 9.82%).
+
+![Total Tags](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Total%20Tags.png)
+
+This reveals that the end-users are experiencing a significant number of issues with the application's performance. The Technical Support, Product Support, Customer Service, and IT Support departments primarily address these concerns.
+
+![Tags per Department](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20per%20Department.png)
 
 
 ## Recommendations
