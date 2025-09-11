@@ -36,7 +36,6 @@ The Customer IT Support dataset consists of one table with 28,587 records. Shown
 For this analysis, the following amendments were made:
 - The language column was filtered for English-only responses
 - From the queries' bodies and answers, the linebreak code, \n\n, was removed
-- A custom table aggregating the 
 
 This helped clarify the information, ensuring that all data points were clear and readable. This reduced the number of records to 16,338, a reduction of 42.85%.
 
@@ -47,10 +46,14 @@ Key performance indicators show that the Technical Support department handles th
 
 Below is the overview page from the Power BI dashboard, and more examples are included throughout the report.
 
-![Executive overview]()
+![Executive overview](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Executive%20Overview.png)
 
 
 ## Insights Deep Dive
+
+### Priority Breakdown
+
+The Technical Support department accounted for 43.51% of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% and 14.17% respectively. Of these high-priority issues, the Technical Support team actioned 1,444 responses to the Incident type, making up around 52.30% of their most critical workload. This is in contrast to other departments, which have a more balanced workload across the four types of incidents.
 
 
 
