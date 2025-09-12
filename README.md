@@ -62,15 +62,34 @@ The third page of the dashboard shows further supporting information relating to
 
 ### Priority Breakdown
 
-The Technical Support department accounted for 43.51% (2,761) of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% (938) and 14.17% (899), respectively. Of these high-priority issues, the Technical Support team actioned 1,444 responses of the Incident type, making up around 52.30% of their most critical workload. This is in contrast to other departments, which have a more balanced workload across the four types of incidents.
+The Technical Support department accounted for 43.51% (2,761) of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% (938) and 14.17% (899), respectively. These high-priority issues made up 58.29% of the Technical Support team's responses, indicating potential bottlenecks for the business if resources were suddenly strained.
 
-The IT Support team actioned the second greatest number of high-priority requests, contributing to 30.52% of their workload. These tasks were evenly split amongst the four incident types, showing a balanced distribution of problems relating to their role.
+![Dept vs Priority](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Dept%20vs%20Priority.png)
 
-Although the Product Support department handles the third-highest number of high-priority tickets, it acts on the most medium-priority requests, totalling 1,575 tickets. These medium requests equate to 51.25% of their tasks. In contrast, the Technical Support team handles 1,442 medium tickets, resulting in 30.44% of their workload being of 2nd order priority.
+The IT Support team actioned the second greatest number of high-priority requests, contributing to 30.52% of their workload. This shows that the IT Support team has a more balanced distribution of load across its three priority queues compared to the Technical Support team. If the number of their issues were to increase, the team would have the capacity to take the burden and succeed, as there is room for growth.
 
-Digging deeper into the middle of the table figures, the Customer Service team shows that they responded to 1,121 medium tickets, equalling 46.51% of their workload, giving them the third longest queue of items to action of this priority. This is in addition to the Customer Service department actioning the largest number of low-priority tickets at 837, accounting for 34.73% of their responses.
+Although the Product Support department handles the third-highest number of high-priority tickets, it acts on the most medium-priority requests, totalling 1,575 tickets. These medium requests equate to 51.25% of their load. In contrast, the Technical Support team handles 1,442 medium tickets, resulting in 30.44% of their workload being of 2nd order priority. These figures may indicate the Product Support team's immaturity, as they are handling 1.75 times more medium-priority tasks compared to their high-priority tickets.
 
-![Priorities and Incident Types](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Priorities%20and%20Incident%20Types.png)
+Digging deeper into the middle of the table figures, the Customer Service team shows that they responded to 1,121 medium tickets, equalling 46.51% of their workload, giving them the third longest queue of items to action of this priority. This is in addition to the Customer Service department actioning the largest number of low-priority tickets at 837, accounting for 34.73% of their responses. However, despite this imbalance of actions, it does make sense that the Customer Service team responds more frequently to lower-priority issues due to the nature of the role and how they tie in with the other departments. They are expected to handle simpler queries, enabling the more technical teams to spend the majority of their time and effort in resolving urgent problems for end-users.
+
+
+### Incident Types Analysis
+
+The incidents column in this dataset features four attributes: change, incident, problem, and request. These types correlate to both the severity and type of issue the end-user is experiencing.
+
+![Incidents by Dept & Type](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Incidents%20by%20Dept%20%26%20Type.png)
+
+The Technical Support department responded to 2,460 Incident tickets, accounting for 51.93% of their total responses. This indicates that the team's primary focus is on resolving unplanned interruptions or reductions in IT service quality. Filtering by priority reveals that this team actioned 1,444 high-priority Incident tickets, resulting in 30.48% of their total workload and 52.30% of their critical actions.
+
+![Technical Support Incidents](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Technical%20Support%20Incidents.png)
+
+The next largest number of Incident tickets, 1,383, was responded to by the Product Support department, making up 45.00% of their total responses. Investigating this figure further unveiled that the majority of responses came under medium priority, equating to 49.53% of their Incident tickets. This is in contrast to the Technical Support team, which handled medium-priority tickets of Incident type 29.72% of the time.
+
+![Product Support Incidents](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Product%20Support%20Incidents.png)
+
+One can conclude from this that issues escalate from the Product Support team to the Technical Support team, as there are apparent differences in what each team prioritises. A similar story is present within the Problem-type tickets, where the Technical Support team actioned 1,023 requests, while the Product Support team followed with the next highest number at 666. Looking further into these two figures showed that the Technical Support team responded to 596 high-priority Problem tickets, making up 58.26% of their responses for this incident type, while the Product Support team resolved 327 medium-priority tickets of the same type, taking up 49.10% of their effort with Problem requests.
+
+![Problem Tickets](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Problem%20Tickets.png)
 
 
 ### Tags per Department
