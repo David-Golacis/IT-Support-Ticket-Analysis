@@ -8,7 +8,8 @@ The fictitious company has significant amounts of data for its application acros
 
 Insights and recommendations are provided on the following key areas:
 - Evaluation of departmental workload distribution
-- An analysis of the highest priority issues
+- Analysis of the highest priority issues
+- Investigation of various incident types by departments
 - An assessment of the most frequent tags used
 - Identification of commonly requested details in ticket responses
 
@@ -87,7 +88,7 @@ The next largest number of Incident tickets, 1,383, was responded to by the Prod
 
 ![Product Support Incidents](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Product%20Support%20Incidents.png)
 
-One can conclude from this that issues escalate from the Product Support team to the Technical Support team, as there are apparent differences in what each team prioritises. A similar story is present within the Problem-type tickets, where the Technical Support team actioned 1,023 requests, while the Product Support team followed with the next highest number at 666. Looking further into these two figures showed that the Technical Support team responded to 596 high-priority Problem tickets, making up 58.26% of their responses for this incident type, while the Product Support team resolved 327 medium-priority tickets of the same type, taking up 49.10% of their effort with Problem requests.
+One can conclude from this that issues escalate from the Product Support team to the Technical Support team, as there are apparent differences in what each team prioritises. A similar story is present within the Problem-type tickets, where the Technical Support team actioned 1,023 requests, while the Product Support team followed with the next highest number at 666. Looking further into these two figures showed that the Technical Support team responded to 596 high-priority Problem tickets, making up 58.26% of their responses for this incident type. In contrast, the Product Support team resolved 327 medium-priority tickets of the same type, taking up 49.10% of their effort with Problem requests.
 
 ![Problem Tickets](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Problem%20Tickets.png)
 
@@ -101,6 +102,14 @@ Sifting through the assigned categories reveals that the three most common tags 
 Grouping these tags by department reveals that the Technical Support, Product Support, Customer Service, and IT Support departments primarily address these concerns.
 
 ![Tags per Department](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20per%20Department.png)
+
+
+### Text Analysis
+
+The unstructured text within email queries and responses relating to high-priority incidents were mined for common requests from end-users by agents. The following patterns were identified:
+- **Billing System:** affected customers' account numbers, incorrect charge amounts, transaction logs, and phone numbers of those affected.
+- **Recent Deployment Access/ High Server Load:** error messages, specific symptoms being experienced, and any recent code updates.
+- **Recent Code Updates in Data Analysis:** software version used, data format used, information on the API updates, user's software configuration, error messages, recent software updates and network disruptions, and a phone number to contact for additional details/ resolution.
 
 
 ## Recommendations
