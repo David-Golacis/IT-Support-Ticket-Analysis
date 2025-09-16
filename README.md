@@ -114,35 +114,10 @@ The unstructured text within email queries and responses relating to high-priori
 
 ## Recommendations
 
+Based on the uncovered insights, the following recommendations have been provided:
 
+- With 28.99% of ticket responses coming from just the Technical Support team, diversifying the teams which act on these problems is crucial. **Expanding the range of issues that other teams address would provide greater resilience to the IT department.**
 
+- Out of 16,338 tickets raised, 38.84% were of high-priority incidents. These problems were identified as being correlated with performance issues on various services. **Effort should be directed at reducing these issues and normalise the distribution of priorities.** High-priority incidents should be rarer than low-priority requests, as fixes should be routine.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Frequently, the same details are being asked time and time again by the agents in their responses. **Enhancing the IT catalogue to request these details upfront would greatly benefit the quality of the service.** Requesting the end user's phone numbers, software versions, error messages, customers' account numbers, incorrect charge amounts, and transaction logs would save the agent time in chasing for this information, significantly improving the quality of responses.
