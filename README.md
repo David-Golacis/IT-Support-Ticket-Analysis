@@ -2,48 +2,60 @@
 
 ## Background and Overview
 
-An open-source customer IT support dataset for a global brand has been obtained from Kaggle. Please find the dataset linked here: [Customer IT Support - Ticket Dataset](https://www.kaggle.com/datasets/tobiasbueck/multilingual-customer-support-tickets).
+This project analyses an open-source IT support dataset sourced from Kaggle: [Customer IT Support - Ticket Dataset](https://www.kaggle.com/datasets/tobiasbueck/multilingual-customer-support-tickets).
 
-The fictitious company has significant amounts of data for its application across various departments, including priority of issues, types of tickets, assigned tags/categories, and queries' subjects, bodies, and answers. This project thoroughly analyses and synthesises this data to uncover critical insights that will improve the business's quality of responses.
+The fictitious company dataset contains ticket metadata across departments, including priority, incident type, tags, and ticket text (subject, body, and agent response). The analysis uncovers patterns in workload distribution, urgency, and recurring issues, with the goal of improving operational resilience and the quality of support responses.
 
-Insights and recommendations are provided on the following key areas:
-- Evaluation of departmental workload distribution
+Key focus areas:
+- Departmental workload distribution
 - Analysis of the highest priority issues
-- Investigation of various incident types by departments
-- An assessment of the most frequent tags used
-- Identification of commonly requested details in ticket responses
+- Ticket types and how they vary by department
+- Most frequent tags used
+- Repeated customer details requested in responses
 
-An interactive Power BI dashboard can be downloaded [here](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/IT%20Support%20Dashboard.pbix).
+An interactive Power BI dashboard is available [here](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/IT%20Support%20Dashboard.pbix).
 
 The dataset used can be found [here](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Dataset/aa_dataset-tickets-multi-lang-5-2-50-version.csv).
 
 
 ## Data Structure Overview
 
-The Customer IT Support dataset consists of one table with 28,587 records. Shown below is the structure of the database.
+The dataset contains 28,587 records with the following fields:
 
-| Field    | Description                                                                   | Data Type |
-|----------|-------------------------------------------------------------------------------|-----------|
-| Queue    | Specifies the department to which the email ticket is routed                  | String    |
-| Priority | Indicates the urgency and importance of the issue                             | String    |
-| Language | Indicates the language in which the email is written                          | String    |
-| Version  | Designates the version of the application used                                | Number    |
-| Subject  | Subject of the customer's email                                               | String    |
-| Body     | Body of the customer's email                                                  | String    |
-| Answer   | The response provided by the helpdesk agent                                   | String    |
-| Type     | The type of ticket as picked by the agent                                     | String    |
-| Tags     | Tags/categories assigned to the ticket, split into ten columns in the dataset | String    |
+| Field    | Description                                      | Data Type |
+|----------|--------------------------------------------------|-----------|
+| Queue    | Department assigned to ticket                    | String    |
+| Priority | Urgency of the issue (low, medium, high)         | String    |
+| Language | Ticket language                                  | String    |
+| Version  | Application version used                         | Number    |
+| Subject  | Customer email subject                           | String    |
+| Body     | Customer email body                              | String    |
+| Answer   | Agent response                                   | String    |
+| Type     | Ticket type (Incident, Request, Problem, Change) | String    |
+| Tags     | Tags/categories assigned (10 columns in dataset) | String    |
 
 For this analysis, the following amendments were made:
-- The language column was filtered for English-only responses
-- From the queries' bodies and answers, the linebreak code, \n\n, was removed
+- Filtered to English-language tickets only (16,338 records; 42.9% reduction).
+- Removed formatting artefacts (line breaks) from text fields.
 
-This helped clarify the information, ensuring that all data points were clear and readable. This reduced the number of records to 16,338, a reduction of 42.85%.
+Limitation: Insights may not represent tickets in other languages.
 
 
 ## Executive Summary
 
-Key performance indicators show that the Technical Support department handles the majority of tickets by volume, 4,737, of the 16,338 total tickets raised, equating to 28.99%. From the total number of issues, 38.84% have been marked as high-priority incidents, indicating urgency and importance to the business. Additionally, 40.22% of problems have been assigned the incident type by an agent, showing that issues were related to unplanned interruption or a reduction in the quality of an IT service that directly impacts users' ability to perform their jobs. To further support this, the top 3 tags across all records signify concerns with the application's usability: Tech Support, IT, and Performance.
+We analysed 16,338 English-language tickets. The findings show a high concentration of urgent work, pressure on Technical Support, and recurring requests for the same customer details.
+
+- Workload concentration: Technical Support handles 4,737 of 16,338 tickets (29.0%), including 43.5% of all high-priority issues. This creates a single-point bottleneck.
+
+- High-priority prevalence: 38.8% of all tickets are marked high priority — unusually high, suggesting recurring systemic issues rather than rare emergencies.
+
+- Incident dominance: 40.2% of tickets are classified as Incidents (unplanned interruptions/reduced IT service quality).
+
+- Tags: Most frequent tags (Tech Support, IT, Performance) highlight repeated usability and performance problems.
+
+- Repeated details: Agents often request the same data (account numbers, software versions, error messages, transaction logs, contact numbers), creating delays and unnecessary back-and-forth.
+
+Implication: Without intervention, Technical Support remains overloaded, urgent tickets dominate effort, and resolution speed suffers. Standardising intake, cross-training other teams, and addressing recurring issues will reduce risk and improve efficiency.
 
 Below is the overview page from the Power BI dashboard, and more examples are included throughout the report.
 
@@ -61,63 +73,146 @@ The third page of the dashboard shows further supporting information relating to
 ![Tags & Themes](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20%26%20Themes.png)
 
 
-### Priority Breakdown
+### Department Workload & Priority
 
-The Technical Support department accounted for 43.51% (2,761) of all high-priority issues, with the next most significant number of responses coming from IT Support and Product Support at 14.78% (938) and 14.17% (899), respectively. These high-priority issues made up 58.29% of the Technical Support team's responses, indicating potential bottlenecks for the business if resources were suddenly strained.
+- Technical Support: 4,737 tickets (29.0%), of which 58.3% are high priority. Handles 43.5% of all high-priority tickets.
 
-![Dept vs Priority](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Dept%20vs%20Priority.png)
+- IT Support: 938 high-priority tickets, representing 30.5% of their workload. Distribution is more balanced across priority levels.
 
-The IT Support team actioned the second greatest number of high-priority requests, contributing to 30.52% of their workload. This shows that the IT Support team has a more balanced distribution of load across its three priority queues compared to the Technical Support team. If the number of their issues were to increase, the team would have the capacity to take the burden and succeed, as there is room for growth.
+- Product Support: 899 high-priority tickets (14.2%), but primarily handles medium-priority work (1,575; 51.3% of workload).
 
-Although the Product Support department handles the third-highest number of high-priority tickets, it acts on the most medium-priority requests, totalling 1,575 tickets. These medium requests equate to 51.25% of their load. In contrast, the Technical Support team handles 1,442 medium tickets, resulting in 30.44% of their workload being of 2nd order priority. These figures may indicate the Product Support team's immaturity, as they are handling 1.75 times more medium-priority tasks compared to their high-priority tickets.
+- Customer Service: 1,121 medium-priority tickets (46.5% of workload) and 837 low-priority tickets (34.7%). This aligns with their role handling simpler, lower-urgency requests.
 
-Digging deeper into the middle of the table figures, the Customer Service team shows that they responded to 1,121 medium tickets, equalling 46.51% of their workload, giving them the third longest queue of items to action of this priority. This is in addition to the Customer Service department actioning the largest number of low-priority tickets at 837, accounting for 34.73% of their responses. However, despite this imbalance of actions, it does make sense that the Customer Service team responds more frequently to lower-priority issues due to the nature of the role and how they tie in with the other departments. They are expected to handle simpler queries, enabling the more technical teams to spend the majority of their time and effort in resolving urgent problems for end-users.
-
-
-### Incident Types Analysis
-
-The incidents column in this dataset features four attributes: change, incident, problem, and request. These types correlate to both the severity and type of issue the end-user is experiencing.
-
-![Incidents by Dept & Type](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Incidents%20by%20Dept%20%26%20Type.png)
-
-The Technical Support department responded to 2,460 Incident tickets, accounting for 51.93% of their total responses. This indicates that the team's primary focus is on resolving unplanned interruptions or reductions in IT service quality. Filtering by priority reveals that this team actioned 1,444 high-priority Incident tickets, resulting in 30.48% of their total workload and 52.30% of their critical actions.
-
-![Technical Support Incidents](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Technical%20Support%20Incidents.png)
-
-The next largest number of Incident tickets, 1,383, was responded to by the Product Support department, making up 45.00% of their total responses. Investigating this figure further unveiled that the majority of responses came under medium priority, equating to 49.53% of their Incident tickets. This is in contrast to the Technical Support team, which handled medium-priority tickets of Incident type 29.72% of the time.
-
-![Product Support Incidents](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Product%20Support%20Incidents.png)
-
-One can conclude from this that issues escalate from the Product Support team to the Technical Support team, as there are apparent differences in what each team prioritises. A similar story is present within the Problem-type tickets, where the Technical Support team actioned 1,023 requests, while the Product Support team followed with the next highest number at 666. Looking further into these two figures showed that the Technical Support team responded to 596 high-priority Problem tickets, making up 58.26% of their responses for this incident type. In contrast, the Product Support team resolved 327 medium-priority tickets of the same type, taking up 49.10% of their effort with Problem requests.
-
-![Problem Tickets](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Problem%20Tickets.png)
+Insight: Technical Support is disproportionately exposed to urgent issues, while Product Support and Customer Service focus more on medium and low-priority requests. This imbalance risks burnout in Technical Support and potential delays in critical cases.
 
 
-### Tags per Department
+### Incident Types by Department
 
-Sifting through the assigned categories reveals that the three most common tags used across all tickets were Tech Support (9,597; 12.50%), IT (9,320; 12.14%), and Performance (7,536; 9.82%). This reveals that the end-users are experiencing a significant number of issues with the application's performance.
+Ticket types: Change, Incident, Problem, Request.
 
-![Total Tags](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Total%20Tags.png)
+- Technical Support: 2,460 Incidents (51.9% of workload), including 1,444 high-priority cases (52.3% of their critical work).
 
-Grouping these tags by department reveals that the Technical Support, Product Support, Customer Service, and IT Support departments primarily address these concerns.
+- Product Support: 1,383 Incidents (45.0% of workload), with most at medium priority (49.5%).
 
-![Tags per Department](https://github.com/David-Golacis/IT-Support-Dashboard/blob/main/Visuals/Tags%20per%20Department.png)
+- Problem-type tickets: Technical Support handles 1,023 (596 high-priority; 58.3% of their Problem workload). Product Support resolves 666 Problems, mostly medium priority (327; 49.1%).
+
+Insight: Pattern is consistent with escalation from Product Support (medium priority) to Technical Support (high priority). While causality cannot be confirmed without timestamps, the distribution suggests a tiered resolution model.
+
+
+### Tags
+
+- Top tags overall: Tech Support (12.5%), IT (12.1%), Performance (9.8%).
+
+- By department: Technical Support, Product Support, Customer Service, and IT Support are the main handlers of performance-related issues.
+
+Insight: Performance issues dominate across multiple teams, pointing to recurring technical instability.
 
 
 ### Text Analysis
 
-The unstructured text within email queries and responses relating to high-priority incidents were mined for common requests from end-users by agents. The following patterns were identified:
-- **Billing System:** affected customers' account numbers, incorrect charge amounts, transaction logs, and phone numbers of those affected.
-- **Recent Deployment Access/ High Server Load:** error messages, specific symptoms being experienced, and any recent code updates.
-- **Recent Code Updates in Data Analysis:** software version used, data format used, information on the API updates, user's software configuration, error messages, recent software updates and network disruptions, and a phone number to contact for additional details/ resolution.
+Analysis of high-priority tickets shows repeated agent requests for the same customer details:
+
+- Billing system: account numbers, incorrect charges, transaction logs, customer contact details.
+
+- Server load / deployment access: error messages, recent updates, system symptoms.
+
+- Code/data issues: software version, configuration details, API updates, error logs, network status, contact number.
+
+Insight: Lack of structured intake fields forces agents to repeatedly chase for critical details, extending resolution time.
 
 
 ## Recommendations
 
-Based on the uncovered insights, the following recommendations have been provided:
+### Quick Wins (0–4 weeks)
 
-- With 28.99% of ticket responses coming from just the Technical Support team, diversifying the teams which act on these problems is crucial. **Expanding the range of issues that other teams address would provide greater resilience to the IT department.**
+1. Mandatory intake fields → Require account number, software version, error message, and contact phone number at ticket creation.
 
-- Out of 16,338 tickets raised, 38.84% were of high-priority incidents. These problems were identified as being correlated with performance issues on various services. **Effort should be directed at reducing these issues and normalise the distribution of priorities.** High-priority incidents should be rarer than low-priority requests, as fixes should be routine.
+- Impact: fewer follow-up emails, faster first response.
 
-- Frequently, the same details are being asked time and time again by the agents in their responses. **Enhancing the IT catalogue to request these details upfront would greatly benefit the quality of the service.** Requesting the end user's phone numbers, software versions, error messages, customers' account numbers, incorrect charge amounts, and transaction logs would save the agent time in chasing for this information, significantly improving the quality of responses.
+- Measure: average agent follow-up requests (target -30%).
+
+2. Response templates / macros → Pre-built responses for top recurring issues (password reset, billing, VPN, performance).
+
+- Impact: greater consistency, reduced handling time.
+
+- Measure: first-contact resolution rate (target +15%).
+
+3. Knowledge base “Top 5 Issues” → Self-service articles for most frequent tags.
+
+- Impact: diverts common queries away from support teams.
+
+- Measure: volume reduction in those tags (-20% in 2 months).
+
+
+### Mid-Term (1–3 months)
+
+4. Cross-train Product Support → Equip Product Support to resolve selected medium-priority incidents directly.
+
+- Impact: reduces Technical Support escalations.
+
+- Measure: % escalations Product → Technical (-25%).
+
+5. Tag standardisation → Merge duplicates/synonyms and implement auto-suggest tagging.
+
+- Impact: cleaner reporting, better routing.
+
+- Measure: reduction in manual tag corrections.
+
+6. Process dashboard → Add Power BI views for workload by priority/type, % high-priority load, and tag trends.
+
+- Impact: improves visibility and planning.
+
+- Measure: manager adoption, frequency of usage.
+
+
+### Strategic (3–12 months)
+
+7. Service quality metrics → Define targets for high-priority share (<15%), backlog size, and ticket mix.
+
+- Impact: establishes clear service expectations.
+
+- Measure: SLA compliance rate.
+
+8. Performance monitoring integration → Correlate system telemetry with performance-tagged incidents.
+
+- Impact: detect root causes earlier, reduce reactive tickets.
+
+- Measure: % performance-tagged incidents correlated with known system events.
+
+
+## Implementation Roadmap
+
+Weeks 0–4 (Ops Manager)
+
+- Configure intake form fields.
+
+- Deploy top 5 response templates.
+
+- Publish knowledge base articles.
+
+Weeks 5–12 (Training Lead / IT Ops)
+
+- Deliver Product Support training for medium-priority incidents.
+
+- Begin tag taxonomy clean-up.
+
+- Launch Power BI workload dashboard.
+
+Months 3–12 (Data/Engineering)
+
+- Formalise SLA metrics.
+
+- Explore telemetry → incident correlation.
+
+- Report on ROI of interventions (time saved, cost avoidance).
+
+
+
+
+
+
+
+
+
+
+
