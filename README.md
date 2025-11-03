@@ -41,6 +41,9 @@ For this analysis, the following amendments were made:
 ### Representativeness Check
 Before analysis, we validated that the English-only subset remained representative of the full dataset. To test whether filtering introduced sampling bias in English-language tickets (16,338 of 28,587 records), we compared the distributions of priority, type, and queue between the full and English-only datasets. Differences were minimal: total absolute proportion shifts were below 1.3 percentage points across all variables, and the largest single-category difference was 0.44 points for Product Support in queue. Chi-square tests showed no statistically significant divergence (p > 0.8 for all), and Cramér’s V values < 0.01 indicate negligible effect sizes. We therefore consider the English subset representative of the overall dataset for these top-level dimensions, with only trivial over-representation of Product Support tickets.
 
+### Lifecycle tracking limitation
+The dataset lacks unique ticket identifiers, timestamps, and customer or agent details, which prevents measuring operational metrics such as time to resolution, reopen rate, or repeat incidents. As a result, this analysis focuses on ticket characteristics (priority, type, tags, and departmental distribution) rather than workflow or outcome metrics. Future analysis using real-world ITSM data with identifiers and timestamps would enable stronger conclusions about service quality and customer impact.
+
 
 ## Executive Summary
 
