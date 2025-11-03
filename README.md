@@ -38,7 +38,8 @@ For this analysis, the following amendments were made:
 - Filtered to English-language tickets only (16,338 records; 42.9% reduction).
 - Removed formatting artefacts (line breaks) from text fields.
 
-Limitation: Insights may not represent tickets in other languages.
+### Representativeness Check
+Before analysis, we validated that the English-only subset remained representative of the full dataset. To test whether filtering introduced sampling bias in English-language tickets (16,338 of 28,587 records), we compared the distributions of priority, type, and queue between the full and English-only datasets. Differences were minimal: total absolute proportion shifts were below 1.3 percentage points across all variables, and the largest single-category difference was 0.44 points for Product Support in queue. Chi-square tests showed no statistically significant divergence (p > 0.8 for all), and Cramér’s V values < 0.01 indicate negligible effect sizes. We therefore consider the English subset representative of the overall dataset for these top-level dimensions, with only trivial over-representation of Product Support tickets.
 
 
 ## Executive Summary
