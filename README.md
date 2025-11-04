@@ -125,6 +125,11 @@ Analysis of high-priority tickets shows repeated agent requests for the same cus
 Insight: Lack of structured intake fields forces agents to repeatedly chase for critical details, extending resolution time.
 
 
+### Thematic Recurrence Analysis (Exploratory)
+
+To approximate recurring issues without customer identifiers, ticket subjects were vectorised using TF-IDF and compared via cosine similarity. Pairs of tickets with ≥ 0.85 similarity were considered “thematically recurrent.” The method reveals patterns of repeated issues (e.g., login errors, billing problems) rather than repeated customers. While this analysis does not track user-level repetition, it highlights common problem statements that could indicate systemic issues or documentation gaps.
+
+
 ## Recommendations
 
 ### Quick Wins (0–4 weeks)
