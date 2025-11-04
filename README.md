@@ -127,7 +127,11 @@ Insight: Lack of structured intake fields forces agents to repeatedly chase for 
 
 ### Thematic Recurrence Analysis (Exploratory)
 
-To approximate recurring issues without customer identifiers, ticket subjects were vectorised using TF-IDF and compared via cosine similarity. Pairs of tickets with ≥ 0.85 similarity were considered “thematically recurrent.” The method reveals patterns of repeated issues (e.g., login errors, billing problems) rather than repeated customers. While this analysis does not track user-level repetition, it highlights common problem statements that could indicate systemic issues or documentation gaps.
+To identify repeated issue patterns, English-language ticket subjects were vectorised using TF-IDF and compared using cosine similarity. Tickets with ≥0.85 similarity were considered thematically recurrent.
+
+Results show that approximately 10–20% of tickets share highly similar phrasing, indicating recurring support themes rather than one-off issues. The most repetitive areas were Request (21%), Incident (20%), and Technical Support (16%), suggesting that many tickets stem from known or preventable issues.
+
+Text clustering further revealed recurring topics including system performance degradation, security incidents, billing discrepancies, and integration challenges. These patterns reinforce earlier findings that agents frequently request the same technical details from customers, implying that structured intake forms and proactive knowledge-base updates could reduce ticket volume and resolution time.
 
 
 ## Recommendations
