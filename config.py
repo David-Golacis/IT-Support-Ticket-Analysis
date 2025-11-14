@@ -29,35 +29,35 @@ class Config:
 
     DATA_DIR = BASE_DIR / "Data"
     NOTEBOOKS_DIR = BASE_DIR / "Notebooks"
-    SUPPORTING_DOCS_DIR = BASE_DIR / "Supporting Documents"
+    SUPPORTING_DOCS_DIR = BASE_DIR / "Supporting_Documents"
 
     # ==============================================================
     # 2. Supporting Documents Substructure
     # ==============================================================
     # Quality Checks
-    QC_DIR = SUPPORTING_DOCS_DIR / "00 Quality Checks"
-    REP_CSV_DIR = QC_DIR / "CSV"
+    QC_DIR = SUPPORTING_DOCS_DIR / "00_Quality_Checks"
+    QC_CSV_DIR = QC_DIR / "CSV"
 
     # Representative Checks
-    REP_DIR = SUPPORTING_DOCS_DIR / "01 Representativeness Checks"
-    REP_IMG_DIR = REP_DIR / "images"
+    REP_DIR = SUPPORTING_DOCS_DIR / "01_Representativeness_Checks"
+    REP_IMG_DIR = REP_DIR / "Images"
     REP_CSV_DIR = REP_DIR / "CSV"
 
     # Text Analytics
-    TEXT_DIR = SUPPORTING_DOCS_DIR / "02 Text Analytics"
-    TEXT_IMG_DIR = TEXT_DIR / "images"
+    TEXT_DIR = SUPPORTING_DOCS_DIR / "02_Text_Analytics"
+    TEXT_IMG_DIR = TEXT_DIR / "Images"
     TEXT_CSV_DIR = TEXT_DIR / "CSV"
 
     # Master output folder for shared artefacts (optional)
-    OUTPUT_DIR = BASE_DIR / "Outputs"
-    MODELS_DIR = OUTPUT_DIR / "Models"
-    LOGS_DIR = OUTPUT_DIR / "Logs"
+    # OUTPUT_DIR = BASE_DIR / "Outputs"
+    # MODELS_DIR = OUTPUT_DIR / "Models"
+    # LOGS_DIR = OUTPUT_DIR / "Logs"
 
     # ==============================================================
     # 3. Data Files
     # ==============================================================
     RAW_DATA_PATH = DATA_DIR / "IT_Tickets_Raw.csv"
-    # CLEAN_DATA_PATH = DATA_DIR / "tickets_clean.csv"
+    CLEAN_DATA_PATH = QC_CSV_DIR / "Tickets_Clean.csv"
 
     # Intermediate artefacts
     # TFIDF_MATRIX_PATH = TEXT_CSV_DIR / "tfidf_matrix.pkl"
@@ -102,13 +102,14 @@ class Config:
     def ensure_directories(cls):
         """Create all directories if they don’t already exist."""
         dirs = [
+            cls.QC_CSV_DIR,
             cls.REP_IMG_DIR,
             cls.REP_CSV_DIR,
             cls.TEXT_IMG_DIR,
             cls.TEXT_CSV_DIR,
-            cls.OUTPUT_DIR,
-            cls.MODELS_DIR,
-            cls.LOGS_DIR,
+            # cls.OUTPUT_DIR,
+            # cls.MODELS_DIR,
+            # cls.LOGS_DIR,
         ]
         for d in dirs:
             os.makedirs(d, exist_ok=True)
